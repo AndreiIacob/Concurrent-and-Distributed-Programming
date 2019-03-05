@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.1",
+    "signature": "549b58dcbbb4438d2bc4931167d059866a5b9341"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.1": {
+      "Homework1Server/1.0.0": {
+        "dependencies": {
+          "NDesk.Options.Core": "1.2.4"
+        },
+        "runtime": {
+          "Homework1Server.dll": {}
+        }
+      },
+      "NDesk.Options.Core/1.2.4": {
+        "runtime": {
+          "lib/netcoreapp2.1/NDesk.Options.dll": {
+            "assemblyVersion": "1.2.4.0",
+            "fileVersion": "1.2.4.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Homework1Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NDesk.Options.Core/1.2.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-v7yYe7kxoX/xPerbRfFQWbEdYlY4RIfgiEru0ruUKg1UWXq1hWEIbkEpd1WvP8lL0MfoagfN+RbKKllsILzajg==",
+      "path": "ndesk.options.core/1.2.4",
+      "hashPath": "ndesk.options.core.1.2.4.nupkg.sha512"
+    }
+  }
+}

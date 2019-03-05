@@ -1,0 +1,11 @@
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Server\bin\Debug\netcoreapp2.1\Homework1Server.deps.json
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Server\bin\Debug\netcoreapp2.1\Homework1Server.runtimeconfig.json
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Server\bin\Debug\netcoreapp2.1\Homework1Server.runtimeconfig.dev.json
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Server\bin\Debug\netcoreapp2.1\Homework1Server.dll
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Server\bin\Debug\netcoreapp2.1\Homework1Server.pdb
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Server\obj\Debug\netcoreapp2.1\Homework1Server.csproj.CoreCompileInputs.cache
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Server\obj\Debug\netcoreapp2.1\Homework1Server.AssemblyInfoInputs.cache
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Server\obj\Debug\netcoreapp2.1\Homework1Server.AssemblyInfo.cs
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Server\obj\Debug\netcoreapp2.1\Homework1Server.dll
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Server\obj\Debug\netcoreapp2.1\Homework1Server.pdb
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Server\obj\Debug\netcoreapp2.1\Homework1Server.csprojAssemblyReference.cache

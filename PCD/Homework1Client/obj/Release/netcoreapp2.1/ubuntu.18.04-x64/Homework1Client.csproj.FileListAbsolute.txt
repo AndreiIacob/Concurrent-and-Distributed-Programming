@@ -1,0 +1,14 @@
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\bin\release\netcoreapp2.1\ubuntu.18.04-x64\libhostpolicy.so
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\bin\release\netcoreapp2.1\ubuntu.18.04-x64\libhostfxr.so
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\bin\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\bin\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client.deps.json
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\bin\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client.runtimeconfig.json
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\bin\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client.runtimeconfig.dev.json
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\bin\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client.dll
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\bin\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client.pdb
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\obj\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client.csprojAssemblyReference.cache
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\obj\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client.csproj.CoreCompileInputs.cache
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\obj\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client.AssemblyInfoInputs.cache
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\obj\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client.AssemblyInfo.cs
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\obj\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client.dll
+C:\Users\Andrei Iacob\source\repos\PCD\Homework1Client\obj\release\netcoreapp2.1\ubuntu.18.04-x64\Homework1Client.pdb
