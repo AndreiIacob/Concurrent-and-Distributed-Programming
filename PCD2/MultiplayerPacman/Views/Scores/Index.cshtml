@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MultiplayerPacman.Data.Models.Score>
+
+@{
+    ViewData["Title"] = "LeaderBoard";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>LeaderBoard</h1>
+
+<table class="table">
+    <tr>
+        <th>
+            Rank
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScoreValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+    @{ int idx = 1; }
+    @foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @idx
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ScoreValue)
+        </td>
+        <td>
+            @item.Date.ToString("dd/MM/yyyy")
+        </td>
+    </tr>
+idx++;
+}
+</table>
+

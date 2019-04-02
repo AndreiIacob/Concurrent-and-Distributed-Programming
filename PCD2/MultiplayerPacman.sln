@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiplayerPacman", "MultiplayerPacman\MultiplayerPacman.csproj", "{6DD33B3F-B140-446D-8C5A-A553E524B21E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCDFunctionApp", "PCDFunctionApp\PCDFunctionApp.csproj", "{F8637818-47C4-401F-8E13-3533BCA7AEF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DD33B3F-B140-446D-8C5A-A553E524B21E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DD33B3F-B140-446D-8C5A-A553E524B21E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DD33B3F-B140-446D-8C5A-A553E524B21E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DD33B3F-B140-446D-8C5A-A553E524B21E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8637818-47C4-401F-8E13-3533BCA7AEF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8637818-47C4-401F-8E13-3533BCA7AEF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8637818-47C4-401F-8E13-3533BCA7AEF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8637818-47C4-401F-8E13-3533BCA7AEF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4763A63D-2FA0-4165-BBA1-1426461EE511}
+	EndGlobalSection
+EndGlobal
