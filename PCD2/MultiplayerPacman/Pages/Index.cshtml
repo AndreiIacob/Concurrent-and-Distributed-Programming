@@ -289,8 +289,8 @@
 
     gameStateConnection.on("ReceiveState", (props) => {
         console.log(props);
-        //setPacmenByProps(props);
-        //eraseBubbles();
+        setPacmenByProps(props);
+        eraseBubbles();
     });
 
     gameStateConnection.on("ReceiveGameId", (recGameId) => {
@@ -303,6 +303,9 @@
     function sendState() {
         var state = getPacmenObj();
         state["gameId"] = gameId;
+        if (userEmail)
+        state["email"] = userEmail;
+
         gameStateConnection.invoke("SendState", state).catch(err => console.error(err.toString()));
     }
 </script>

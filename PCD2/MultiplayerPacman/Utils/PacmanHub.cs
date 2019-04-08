@@ -129,8 +129,18 @@ namespace MultiplayerPacman.Utils
 
             if (states.Count > 0)
             {
-                JObject state = (JObject) states[0];
-                await Clients.All.SendAsync("ReceiveState", state);
+                JObject state = (JObject)states[0];
+                await Clients.Caller.SendAsync("ReceiveState", state);
+            }
+            else
+            {
+                states = GetJsonArrResponse(String.Format(gameStateBaseUrl, Context.User.Identity.Name));
+                if (states.Count > 0)
+                {
+                    JObject savedState = (JObject)states[0];
+                    await Clients.Caller.SendAsync("ReceiveState", savedState.ToString());
+                    //await Clients.All.SendAsync("ReceiveState", state);
+                }
             }
             Console.WriteLine("Done");
         }
@@ -147,10 +157,16 @@ namespace MultiplayerPacman.Utils
             {
                 var json = state.ToString();
                 var url = String.Format(gameStateBaseUrl, state["gameId"]);
+
                 var states = GetJsonArrResponse(url);
                 if (states.Count > 0)
                 {
                     var gameState = states[0];
+                }
+                if (state.ContainsKey("email"))
+                {
+                    state["id"] = state["email"];
+                    PostJson(setGameStateUrl, state.ToString());
                 }
             }
             catch (Exception e)
@@ -158,7 +174,7 @@ namespace MultiplayerPacman.Utils
                 Console.WriteLine(e);
             }
 
-            await Clients.All.SendAsync("ReceiveState", state);
+            //await Clients.All.SendAsync("ReceiveState", state);
         }
     }
 }

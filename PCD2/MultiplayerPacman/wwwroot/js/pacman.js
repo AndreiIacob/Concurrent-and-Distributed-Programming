@@ -216,6 +216,10 @@ function setPacmenByProps(props) {
     BEST_SCORE = props["BEST_SCORE"];
     BUBBLES_ARRAY = props["BUBBLES_ARRAY"];
 
+    if ("SCORE" in props) {
+        SCORE = props["SCORE"];
+        HIGHSCORE = props["HIGHSCORE"];
+    }
 
     if ("GHOST_BLINKY_CANVAS_CONTEXT" in props) {
         GHOST_BLINKY_CANVAS_CONTEXT = props["GHOST_BLINKY_CANVAS_CONTEXT"];
