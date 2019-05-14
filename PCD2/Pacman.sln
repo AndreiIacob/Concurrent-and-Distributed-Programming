@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiplayerPacman", "MultiplayerPacman\MultiplayerPacman.csproj", "{6DD33B3F-B140-446D-8C5A-A553E524B21E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pacman", "Pacman\MultiplayerPacman.csproj", "{6DD33B3F-B140-446D-8C5A-A553E524B21E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCDFunctionApp", "PCDFunctionApp\PCDFunctionApp.csproj", "{F8637818-47C4-401F-8E13-3533BCA7AEF0}"
 EndProject

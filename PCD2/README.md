@@ -1,4 +1,4 @@
-# MultiplayerPacman
+# Pacman
 
 This is a modification of a javascript implementation of pacman made by luciopanepinto which aims to add multiplayer through websockets and Azure services. The original implementation can be found here: https://github.com/luciopanepinto/pacman
 

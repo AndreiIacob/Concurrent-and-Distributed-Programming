@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lisk Shop</title>
+
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://js.lisk.io/lisk-client-1.1.2.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+  <meta name="robots" content="noindex,follow" />
+  </head>
+  <body>
+    <div class="shopping-cart">
+      <!-- Title -->
+      <div class="title">
+        Lisk Shop
+      </div>
+
+      <div id="itemsContainer">
+
+      </div>
+
+      <div class="submit-btn">Submit</div>
+
+    <script type="text/javascript">
+      const items = [
+        ["imgs/item-1.png", "Common Projects", "Bball High", "White", "59"],
+        ["imgs/switch.jpg", "Nintendo Switch", "Its got a screen", "Oh, wait, no its got two", "199"],
+        ["imgs/watch.jpg", "Fancy Watch", "It tells the time", "Probabily fake", "250"],
+        ["imgs/phone.jpg", "Smartphone", "Very Generic Brand", "Probabily made in China", "300"],
+      ];
+
+      let itemsHTML = "";
+      items.forEach((elem) => {
+        itemsHTML += `
+        <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+          <span class="like-btn"></span>
+        </div>
+
+        <div class="image">
+          <img src="${elem[0]}" alt="" />
+        </div>
+
+        <div class="description">
+          <span>${elem[1]}</span>
+          <span>${elem[2]}</span>
+          <span>${elem[3]}</span>
+        </div>
+
+        <div class="quantity">
+          <button class="plus-btn" type="button" name="button">
+            <img src="imgs/plus.svg" alt="" />
+          </button>
+          <input class="item-input" type="text" name="${elem[1]}" price="${elem[4]}" value="0">
+          <button class="minus-btn" type="button" name="button">
+            <img src="imgs/minus.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="total-price">${elem[4]} LSK</div>
+      </div>
+        `
+      });
+
+      $('#itemsContainer').html(itemsHTML);
+
+      $('.minus-btn').on('click', function(e) {
+    		e.preventDefault();
+    		var $this = $(this);
+    		var $input = $this.closest('div').find('input');
+    		var value = parseInt($input.val());
+
+    		if (value > 1) {
+    			value = value - 1;
+    		} else {
+    			value = 0;
+    		}
+
+        $input.val(value);
+
+    	});
+
+    	$('.plus-btn').on('click', function(e) {
+    		e.preventDefault();
+    		var $this = $(this);
+    		var $input = $this.closest('div').find('input');
+    		var value = parseInt($input.val());
+
+    		if (value < 100) {
+      		value = value + 1;
+    		} else {
+    			value =100;
+    		}
+
+    		$input.val(value);
+    	});
+
+      $('.like-btn').on('click', function() {
+        $(this).toggleClass('is-active');
+      });
+
+      // Choose a network (available options: 'testnet' and 'mainnet')
+      const network = 'testnet';
+      const APIClient = initNetwork();
+      const betAddres = '16589091063294652922L';
+
+      function initNetwork() {
+        if (network === 'testnet') {
+          return lisk.APIClient.createTestnetAPIClient();
+        } else if (network === 'mainnet') {
+          return lisk.APIClient.createMainnetAPIClient();
+        } else {
+          console.log(`Error configuring network '${network}'.`)
+        }
+      }
+
+      function submit(){
+        let referenceString = "";
+        let price = 0;
+        $('.item-input').each(function( index ) {
+          var amount = parseInt($(this).val());
+
+          if(amount > 0){
+            price += parseFloat($(this).attr('price')) * amount;
+        referenceString += $(this).attr('name') + " x" + amount + ", ";
+          }
+});
+        referenceString= referenceString.substring(0, referenceString.length - 2);
+        console.log(referenceString);
+        console.log(price);
+
+        const paymentUrl = `lisk://wallet?recipient=${betAddres}&amount=${price}&reference=${referenceString}`
+        console.log(paymentUrl);
+
+        if(price > 0)
+        window.open(paymentUrl, "_self")
+
+      }
+   
+      $('.submit-btn').on('click', function(){
+        submit();
+      })
+
+    </script>
+  </body>
+</html>

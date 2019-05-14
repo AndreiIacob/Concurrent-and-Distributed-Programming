@@ -1,21 +1,14 @@
 # Concurrent-and-Distributed-Programming
 Coursework for Concurrent and Distributed Programming at "Alexandru Ioan Cuza" University
 
-## How to run Homework 1
+## Homework 1
 
-To compile the server project for use in ubuntu 18.04 the following command must be run:
-dotnet publish -c release -r ubuntu.18.04-x64 Homework1Server.csproj
+The assignment of this homework is to monitor the bytes transfered through both UDP and TCP protocols locally and remotely. This was done using .NET.
 
-Then copy Homework1Server\bin\release\netcoreapp2.1\ubuntu.18.04-x64\publish folder on the linux machine and run following command:
+## Homework 2
 
-./Homework1Server [Options]
+The assiment for homework 2 was to build a application that used provides an implementation of a site that uses several services from a cloud ecosystem and to use WebSockets. I choose Azure and used WebSockets through SignalR.
 
-Options:
-  -p, --protocol=VALUE       TCP or UDP
-  -s, --sendType=VALUE       Stream or StopAndWait
-  -b, --blockSize            The size of a single block that is transfered
-  -d, --outDir               Path to where the files will be copied to
-  -h, --help                 show this message and exit
+## Homework 4
 
-For the client a similar procedure must be used, only “Homework1Server” must be replaced with “Homework1Client”
-
+Homework 4 was mostly a research project dealing with blockchain technologies. I looked into Lisk.
