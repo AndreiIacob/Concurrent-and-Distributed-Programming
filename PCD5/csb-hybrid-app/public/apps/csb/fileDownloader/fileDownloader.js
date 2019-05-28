@@ -19,17 +19,20 @@ function addCnt(filepath, cnt2add){
 
 function increment(filepath){
     addCnt(filepath, 1);
+    
+    ris.startSwarm('Monitor', 'increment', filepath);
 }
-
 
 var interactionProvider = require('interact');
 interactionProvider.enableIframeInteractions();
 interactionProvider.enableLocalInteractions();
+interactionProvider.enableRemoteInteractions();
 var interaction = interactionProvider.createWindowInteractionSpace('iframe', window);
 interaction.init();
 var localInteraction = interactionProvider.createInteractionSpace('local', window);
 let innerSwarmHandler = null;
 
+const ris = interact.createRemoteInteractionSpace('testRemote', 'http://127.0.0.1:8080', 'local/agent/monitor');
 
 $$.swarm.describe('extractAssetFromCSB', {
     start: function (assetPath) {

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>PSK web</title>
+        <script src="../builds/devel/pskclient.js"></script>
+    </head>
+    <body>
+        <div id="main"></div>
+        <script>
+            const interact = pskclientRequire("interact");
+            interact.enableRemoteInteractions();
+            const ris = interact.createRemoteInteractionSpace('testRemote', 'http://127.0.0.1:8080', 'local/agent/monitor');
+
+            ris.startSwarm('Monitor', 'view').onReturn(function(html){
+                console.log(21);
+                document.getElementById("main").innerHTML = html;
+            });
+        </script>
+    </body>
+</html>

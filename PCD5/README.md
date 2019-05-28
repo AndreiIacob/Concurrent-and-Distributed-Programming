@@ -19,3 +19,8 @@ Adding the ability to store contracts.
 
 Two apps were created in public/apps/csb and the two existing ones were modified
 src\components\Modal\Popups\ContractForm.js was created and src\store\actions.js was modified to add the contracts button.
+
+For the simple private sky part to run it simply copy the files to private sky and start private sky.
+
+Documentation
+https://docs.google.com/document/d/12B1r2tUTDXGn2wXBMJ-Rho2NTM9X-PIP2uLskbh9Zd0/edit?usp=sharing
