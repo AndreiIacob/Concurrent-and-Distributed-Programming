@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello swarms in browser! </title>
+    <script src="apps/csb/scripts/webshims.js" type="text/javascript"></script>
+    <script src="apps/csb/scripts/virtualMQ.js"></script>
+    <script src="apps/csb/scripts/pskruntime.js"></script>
+    <script src="apps/csb/scripts/pskclient.js"></script>
+    <script src="apps/csb/scripts/psknode.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script>
+        $$.requireBundle("psknode");
+        $$.requireBundle("pskclient");
+        $$.requireBundle("virtualMQ");
+        require("callflow");
+        require("pskwallet").init();
+
+
+        var interactionProvider = require("interact");
+        interactionProvider.enableIframeInteractions();
+        interactionProvider.enableLocalInteractions();
+        var interaction = interactionProvider.createWindowInteractionSpace("iframe",window);
+        interaction.init();
+        var localInteraction = interactionProvider.createInteractionSpace("local", window);
+
+    </script>
+
+</head>
+<body>
+    <input type="file" name="userfile" id="userFile">
+
+<script src="apps/csb/fileUploader/fileUploader.js"></script>
+<script>
+    let FilesLoadedObserver = [];
+
+
+    $$.swarm.describe("notifyWhenFilesWereLocallyPersisted", {
+        start: function () {
+            FilesLoadedObserver.push((filesName)=>{
+                this.swarm("interaction", "onComplete", filesName);
+            })
+        }
+    });
+
+
+    var fileInput = document.getElementById("userFile");
+    fileInput.addEventListener("change", function () {
+        let csbFileUploader = new CSBFileUploader(fileInput.files);
+        csbFileUploader.persistFilesLocally(function (filesName) {
+            FilesLoadedObserver.forEach((cbk)=>cbk(filesName));
+        })
+    });
+
+</script>
+</body>
+</html>

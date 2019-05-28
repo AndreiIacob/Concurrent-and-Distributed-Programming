@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello swarms in browser! </title>
+    <script>
+
+        var parentIsReady = false;
+        var consoleLogCallbacks = [];
+        console.log = function () {
+            let args = [];
+            for (var i = 0; i < arguments.length; i++)
+                args[i] = arguments[i];
+            let msg = {
+                type: "console.log",
+                message: args
+            };
+
+            if (parentIsReady) {
+                window.postMessage(JSON.stringify(msg), "*");
+            }
+            else {
+                let fn = function (msg) {
+                    return function () {
+                        window.postMessage(JSON.stringify(msg), "*");
+                    }
+                };
+                consoleLogCallbacks.push(fn(msg));
+            }
+        };
+
+        console.log("console.log was overwritten!");
+    </script>
+    <script src="scripts/webshims.js" type="text/javascript"></script>
+    <script src="scripts/pskruntime.js"></script>
+    <script src="scripts/pskclient.js"></script>
+    <script src="scripts/psknode.js"></script>
+    <script>
+
+        $$.requireBundle("psknode");
+        $$.requireBundle("pskclient");
+        require("callflow");
+        require("pskwallet").init();
+        var interactionProvider = require("interact");
+        interactionProvider.enableWebViewInteractions();
+        var interaction = interactionProvider.createWindowInteractionSpace("iframe", window, document);
+    </script>
+    <!--<script src="apps/csb/csb-BrowserTest.js" type="module"  crossorigin ></script>-->
+</head>
+<body>
+<script>
+
+    document.addEventListener('message', function (e) {
+        if (e.data === "parentIsReady") {
+            parentIsReady = true;
+            consoleLogCallbacks.forEach((cbk) => {
+                cbk();
+            });
+            consoleLogCallbacks = [];
+            interaction.init();
+        }
+        else if (e.data === "waitingForReactClient") {
+
+            var client = new XMLHttpRequest();
+            client.open('GET', 'scripts/reactClient.js');
+            client.onreadystatechange = function () {
+                if (client.readyState === 4 && client.status === 200) {
+                    let scriptData = client.responseText;
+                    let message = {reactClientCode: scriptData};
+                    window.postMessage(JSON.stringify(message), "*");
+                }
+            };
+            client.send();
+        }
+
+    })
+
+</script>
+
+</body>
+</html>

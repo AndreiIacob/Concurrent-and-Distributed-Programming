@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello swarms in browser! </title>
+    <link rel="stylesheet" type="text/css" href="apps/csb/contractCreator/contractCreator.css">
+    <script src="apps/csb/scripts/webshims.js" type="text/javascript"></script>
+    <script src="apps/csb/scripts/virtualMQ.js"></script>
+    <script src="apps/csb/scripts/pskruntime.js"></script>
+    <script src="apps/csb/scripts/pskclient.js"></script>
+    <script src="apps/csb/scripts/psknode.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script src="apps/csb/contractCreator/contractCreator.js"></script>
+
+    <div class='wrapper' >
+        <form>
+        <label for="contract">Contract Name: </label>
+        <input type="text" name="contract" id="contractName"><br>
+
+        <div id='rowContainer'>
+            <div class='row' id='row0'>
+                    <label for="name">Asset Name: </label>
+                    <input type="text" name="name"><br>
+                    <label for="uses">Number of Uses: </label>
+                    <input type="number" name="uses"><br>
+                    <label for="end">End Date: </label>
+                    <input type="date" name="end"><br>
+                    <label> Validation Function:</label> <br>
+                    <textarea rows="5" cols="100" class="textarea-tall">
+function validate(assetData){
+    /* Input Code here */
+    return true;
+}
+                    </textarea>
+            </div>
+        </div>
+
+        <button style="margin-left: 15%;" type="button" onclick="addRow()">Add Clause</button>
+
+        <input type="submit" value="Submit" onclick="submit()">    
+       
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+html, body, #root {
+  height:100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background:url("./assets/web/images/blue_background.jpg") no-repeat center center fixed;
+  background-size:cover;
+  overflow: hidden;
+}
+
+#root {
+  position:relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.active {
+  background: #D9D9D9
+}
