@@ -7,8 +7,9 @@ function initLedger(filepath){
 
 
 function CSBFileUploader(filesList) {
-
+    console.log("filesList", filesList);
     let files = Array.from(filesList);
+    console.log("files", files);
 
     var self = null;
     var innerSwarmHandler = null;
@@ -35,7 +36,6 @@ function CSBFileUploader(filesList) {
                 }
             });
 
-
         },
 
         validatePin:function(pin, noTries){
@@ -60,6 +60,7 @@ function CSBFileUploader(filesList) {
                                 filesName.push(file.name)
                             }
                         })(file);
+                        console.log(file);
                         fileReader.readAsArrayBuffer(file, 0, file.size - 1);
                     }
                 })

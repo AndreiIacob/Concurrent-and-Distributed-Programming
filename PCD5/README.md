@@ -1,4 +1,4 @@
-# This is an attempt at integrating contracts into CSBUI
+# This is an attempt at integrating contracts that monitor CSBUI
 
 csbui-ledger stores data about the downloads that occur in csbui-hybrid-app
 

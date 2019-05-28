@@ -17,10 +17,8 @@
 </head>
 
 <body>
-    <script src="apps/csb/contractCreator/contractCreator.js"></script>
 
     <div class='wrapper' >
-        <form>
         <label for="contract">Contract Name: </label>
         <input type="text" name="contract" id="contractName"><br>
 
@@ -44,10 +42,10 @@ function validate(assetData){
 
         <button style="margin-left: 15%;" type="button" onclick="addRow()">Add Clause</button>
 
-        <input type="submit" value="Submit" onclick="submit()">    
-       
-        </form>
+        <input type="submit" value="Submit" id="submitBtn" onclick="submit()">    
+       <a id="link">Download Contract</a>
     </div>
 </body>
+<script src="apps/csb/contractCreator/contractCreator.js"></script>
 
 </html>

@@ -99,7 +99,7 @@ app.post('/api/asset/init', (req, res) => {
 
 app.post('/api/asset/increment', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', headerURL);
-    console.log(req.body);
+
     if(!req.body.filepath) {
     return res.status(400).send({
         success: 'false',
@@ -141,6 +141,63 @@ app.post('/api/asset', async (req, res) => {
     );
 });
 
+
+app.get('/', (reg, res) => {
+    var htmlRes = `
+    <!DOCTYPE html>
+<html>
+<head>
+    <style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      </style>
+      </head>
+      <body>
+      
+      <h2>CSBUI Downloads</h2>
+      
+      <table>
+
+      <tr>
+        <td>Filename</td>
+        <td>Download Count</td>
+      </tr>
+      `
+      var rows = getAllPaths();
+      rows.then((rows) => {
+        console.log(rows);
+        rows.forEach((row) => {
+  
+          htmlRes += `
+            <tr>
+              <td>${row['filepath']}</td>
+              <td>${row['count']}</td>
+            </tr>`
+        });
+        
+  
+      htmlRes += `
+        </table>
+        </body>
+      `;
+      res.set('Content-Type', 'text/html');
+      res.send(new Buffer(htmlRes));
+      })
+
+})
 
 const PORT = 5005;
 

@@ -16,10 +16,9 @@ export default class ContractForm extends React.Component {
 
     componentDidMount() {
         InteractService=InteractionsManager.getInstance(this.webView, "contractCreator");
-
-            InteractService.notifyWhenFormIsComplete((fileName) => {
+        InteractService.notifyWhenFormIsComplete((fileName) => {
                 this.setState({
-                    csbAlias:fileName,
+                    csbAlias:fileName+".json",
                 })
             })
     }
@@ -28,6 +27,7 @@ export default class ContractForm extends React.Component {
         this.setState({
             isLoading: false
         });
+        console.log("Adding files", this.props.csbsPath);
         InteractService.addFilesToCSB(this.props.csbsPath, this.state.csbAlias, (progress)=>{
             this.setState({progress: parseInt(progress)});
         },(info) => {
