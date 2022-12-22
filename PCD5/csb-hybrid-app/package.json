@@ -80,7 +80,7 @@
     "babel-preset-expo": "^4.0.0",
     "flow-bin": "^0.79.1",
     "jest-expo": "^29.0.0",
-    "react-native-scripts": "^1.14.0",
+    "react-native-scripts": "^1.14.1",
     "react-test-renderer": "16.0.0"
   },
   "jest": {
